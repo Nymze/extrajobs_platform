@@ -1,0 +1,15 @@
+<h1>Dernieres offres</h1>
+
+<% @JobOffers.each do |offer| %>
+	<div class="JobOffer">
+		<h2><%= offer.title %></h2>
+		<h2><%= offer.date %></h2>
+		<h2><%= offer.description %></h2>
+		<h2><%= offer.city %></h2>
+		<h2><%= offer.category %></h2>
+		<h2><%= offer.title %></h2>
+		
+		<p><%= link_to "voir offre", JobOffer %></p>
+	</div>
+
+<% end %>

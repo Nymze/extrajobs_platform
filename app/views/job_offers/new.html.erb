@@ -1,0 +1,12 @@
+<%= simple_form_for @JobOffer do |form| %>
+
+  <%= form.input :title, label: "Job title" %>
+  <%= form.input :date, label: "Pour quand?" %>
+  <%= form.input :description, label: "Description du job" %>
+   <%= form.input :skills, label: "Competences recherchees" %>
+    <%= form.input :category, label: "Quelle categorie?" %>
+    <%= form.input :experience, label: "Experience demandee" %>
+  <%= form.input :city, label: "Votre ville" %>
+  
+  <%= form.button :submit %>
+<% end %>
