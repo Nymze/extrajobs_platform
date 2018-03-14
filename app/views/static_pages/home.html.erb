@@ -1,7 +1,11 @@
 
  <% if user_signed_in? %>
 
- <p> Hello  </p>
+ <% controller.redirect_to job_offers_index_path  %>
+
+  <% elsif userpro_signed_in? %>
+
+  <% controller.redirect_to static_pages_userprohome_path  %>
 
   <% else %>
 
