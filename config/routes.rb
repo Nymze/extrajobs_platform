@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   devise_for :users, path: 'users', controllers: {
         sessions: 'users/sessions'
       }
+
   devise_for :userpros, controllers: {sessions: 'userpros/sessions'}
 
   get 'job_offers/index'
@@ -17,10 +18,14 @@ Rails.application.routes.draw do
 
   resources :job_offers
 
-  root 'static_pages#home'
+  
+
+  
+ 	root 'static_pages#home'
+
 
   authenticated :users do
-  root 'job_offers#index'
+  root 'job_offers#index', as: :authenticated_root
 	end
 
 	authenticated :userpros do
