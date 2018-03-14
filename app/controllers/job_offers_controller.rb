@@ -9,6 +9,7 @@ end
 
 def create
 	@JobOffer = JobOffer.new(params.require(:job_offer).permit(:title, :description, :city, :category, :skills, :experience, :date))
+	@JobOffer.userpro_id = current_userpro.id
 if @JobOffer.save
 	redirect_to root_path
 else
