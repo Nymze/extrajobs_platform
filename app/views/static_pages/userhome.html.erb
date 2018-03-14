@@ -1,4 +1,12 @@
 <p> USER HOME PAGE</p>
 
+
+<% if user_signed_in? %>
+<% controller.redirect_to job_offers_index_path  %>
+<% else %>
+
  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
   <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+  <%= link_to "Back", root_path, :class => 'navbar-link'  %>
+
+  <% end %>
