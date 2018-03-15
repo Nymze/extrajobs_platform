@@ -1,13 +1,11 @@
 
+ 
+
+
+
+
  <% if user_signed_in? %>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> c39fdf02b53f7f3a5733844211e15307090b4f71
-=======
->>>>>>> 0a2d69caac717fb5b3d825acb12044b94b45b1d4
  <% controller.redirect_to job_offers_index_path  %>
 
   <% elsif userpro_signed_in? %>
@@ -16,8 +14,41 @@
 
   <% else %>
 
+<%= stylesheet_link_tag "main.css" %>
+<div class="loading">
+<div id="wrapper">
+			<div id="bg"></div>
+			<div id="overlay"></div>
+			<div id="main">
 
-<%= link_to "je suis un pro", static_pages_userprohome_path %>
-<%= link_to "je suis un extra", static_pages_userhome_path %>
+				<!-- Header -->
+					<header id="header">
+						<h1>Nice Extra</h1>
+						<p>Trouvez des extra &nbsp;&bull;&nbsp; Facilement &nbsp;&bull;&nbsp; Sweet cool</p>
+						<nav>
+							<ul>
+								<div class="homebtn"><%= link_to "je suis un pro", static_pages_userprohome_path %> </div>
+
+								<div class="homebtn"><%= link_to "je suis un extra", static_pages_userhome_path %> </div>
+								
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<span class="copyright">&copy; NISSA</a>.</span>
+					</footer>
+
+			</div>
+		</div>
+
+
+<script>
+			window.onload = function() { document.body.className = ''; }
+			window.ontouchmove = function() { return false; }
+			window.onorientationchange = function() { document.body.scrollTop = 0; }
+</script>
 
 <%end %> 
+</div>

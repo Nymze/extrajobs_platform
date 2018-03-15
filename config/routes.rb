@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   resources :job_offers
 
-  
+  resources :candidacies
 
   
  	root 'static_pages#home'
