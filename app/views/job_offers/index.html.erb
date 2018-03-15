@@ -1,15 +1,25 @@
+<div class="container">
+<div>
 <h1>Dernieres offres</h1>
-
+</div>
+<div class="ok"
 <% @JobOffers.each do |offer| %>
 	<div class="JobOffer">
-		<h2><%= offer.title %></h2>
-		<h2><%= offer.date %></h2>
-		<h2><%= offer.description %></h2>
-		<h2><%= offer.city %></h2>
-		<h2><%= offer.category %></h2>
-		<h2><%= offer.title %></h2>
-		
-		<p><%= link_to "voir offre", JobOffer %></p>
-	</div>
+<div><p>Titre: <%= offer.title %></p></div>
+<div><p> date: <%= offer.date %></p></div>
+<div><p> descirption: <%= offer.description %></p></div>
+<div><p> ville: <%= offer.city %></p></div>
+<div><p> category: <%= offer.category %></p></div>
+<div><p> Id de la candidature: <%= offer.candidacies.ids %></p></div> 
+<div><%= link_to "Apply", new_candidacy_path(job_offer_id: @job_offer_id) %> | <%= link_to "voir offre", JobOffer %></div>
 
-<% end %>
+</br>
+</br>
+</br>
+	<%end %>
+</div>
+</div>
+
+
+
+

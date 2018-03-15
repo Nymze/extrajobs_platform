@@ -2,6 +2,11 @@
 
  <p>
 <% if userpro_signed_in? %>
+
+ <%= link_to 'candidacies', candidacies_path %>
+
+
+
   
   <%= link_to 'poster une offre', job_offers_new_path, :class => 'navbar-link' %> |
  
