@@ -1,0 +1,28 @@
+Nous avons actuellement <%= @job_offers.count %> offres qui pourraient vous intéresser :
+<br>
+<br>
+<br>
+
+<% @job_offers.each do |job_offer| %>
+
+	<b><%= job_offer.title %></b>
+	<br>
+	
+	<%= job_offer.description %>
+	<br>
+	
+	Offre proposée par : <%= job_offer.userpro.email %>
+	<br>
+
+	<% if !current_user.job_offers.include?(job_offer) %>
+		<%= link_to "postuler", apply_for_job_path(job_offer_id: job_offer.id) %> 
+	<% else %>
+		<b> Vous avez postulé :) </b>
+		<br>
+		<%= link_to "annuler", cancel_job_candidacy_path(job_offer_id: job_offer.id) %> 
+	<% end %>
+
+	<br>
+	<br>
+
+<% end %>
