@@ -11,7 +11,7 @@ Nous avons actuellement <%= @job_offers.count %> offres qui pourraient vous int�
 	<%= job_offer.description %>
 	<br>
 	
-	Offre proposée par : <%= job_offer.userpro.email %>
+	Offre proposée par :<%= job_offer.userpro %>
 	<br>
 
 	<% if !current_user.job_offers.include?(job_offer) %>
