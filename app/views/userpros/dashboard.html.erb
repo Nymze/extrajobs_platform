@@ -7,6 +7,8 @@
 
 		<li>Vos missions en cours: <%=current_userpro.job_offers.count %></li>
 
+	</ul>
+
 <% current_userpro.job_offers.each do |job_offer| %> 
 
 	<b><%= job_offer.title %></b>
