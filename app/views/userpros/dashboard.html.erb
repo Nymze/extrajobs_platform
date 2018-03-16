@@ -1,5 +1,10 @@
 <%= render partial: "layouts/user_pro_layouts/header"  %>
 <br/>
+<% if userpro_signed_in? %>
+
+<ol>Poster une nouvelle offre</ol>
+
+Vos missions en cours: <%=current_userpro.job_offers.count %>
 <% current_userpro.job_offers.each do |job_offer| %> 
 
 	<b><%= job_offer.title %></b>
@@ -27,4 +32,5 @@
 		<br>
 		<br>	
 
+<% end %>
 <% end %>
