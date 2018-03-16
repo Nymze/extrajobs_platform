@@ -2,9 +2,11 @@
 <br/>
 <% if userpro_signed_in? %>
 
-<ol>Poster une nouvelle offre</ol>
+	<ul>
+		<li>Poster une nouvelle offre</li>
 
-Vos missions en cours: <%=current_userpro.job_offers.count %>
+		<li>Vos missions en cours: <%=current_userpro.job_offers.count %></li>
+
 <% current_userpro.job_offers.each do |job_offer| %> 
 
 	<b><%= job_offer.title %></b>
