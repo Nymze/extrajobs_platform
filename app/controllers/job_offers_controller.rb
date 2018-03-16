@@ -1,6 +1,7 @@
 class JobOffersController < ApplicationController
   def index
 	@JobOffers = JobOffer.all
+end
 
 def new
 	@JobOffer = JobOffer.new
