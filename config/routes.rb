@@ -1,38 +1,21 @@
 Rails.application.routes.draw do
 
- 
+  # ROOT
+ 	root 'home#index'
 
-  get 'static_pages/userprohome'
 
-  get 'static_pages/userhome'
-
-  devise_for :users, path: 'users', controllers: {
-        sessions: 'users/sessions'
-      }
-
+  # DEVISE
+  devise_for :users, path: 'users', controllers: {sessions: 'users/sessions'}
   devise_for :userpros, controllers: {sessions: 'userpros/sessions'}
 
-  get 'job_offers/index'
 
-  get 'job_offers/new'
-
-  resources :job_offers
-
-  resources :candidacies
-
-  
- 	root 'static_pages#home'
+  # TABLEAUX DE BORD
+  get '/tableau-de-bord-extra', to: 'users#dashboard', as: :user_dashboard
+  get '/tableau-de-bord-restaurateur', to: 'userpros#dashboard', as: :userpro_dashboard
 
 
-  authenticated :users do
-  root 'job_offers#index', as: :authenticated_root
-	end
+  # CANDIDATURES
+  get '/postuler', to: 'users#apply_for_job', as: :apply_for_job
+  get '/annuler', to: 'users#cancel_job_candidacy', as: :cancel_job_candidacy
 
-	authenticated :userpros do
-  root 'static_pages#userprohome'
-end
-
-
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
