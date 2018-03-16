@@ -10,7 +10,7 @@
 <div><p> descirption: <%= offer.description %></p></div>
 <div><p> ville: <%= offer.city %></p></div>
 <div><p> category: <%= offer.category %></p></div>
-<div><p> Id de la candidature: <%= offer.candidacies.ids %></p></div> 
+
 <div><%= link_to "Apply", new_candidacy_path(job_offer_id: @job_offer_id) %> | <%= link_to "voir offre", JobOffer %></div>
 
 </br>

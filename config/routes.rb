@@ -18,4 +18,9 @@ Rails.application.routes.draw do
   get '/postuler', to: 'users#apply_for_job', as: :apply_for_job
   get '/annuler', to: 'users#cancel_job_candidacy', as: :cancel_job_candidacy
 
+
+  get '/offre', to: 'job_offers#new', as: :job_offers
+  post '/offre', to: 'job_offers#create', as: :userpro_post
+
+
 end

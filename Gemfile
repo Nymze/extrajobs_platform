@@ -15,6 +15,7 @@ gem 'jbuilder'
 gem 'simple_form'
 gem 'kaminari'
 gem 'devise', '~> 4.2'
+gem 'will_paginate', '~> 3.1.0'
 
 group :development, :test do
   gem 'sqlite3'

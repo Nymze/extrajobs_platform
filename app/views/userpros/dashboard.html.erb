@@ -3,11 +3,13 @@
 <% if userpro_signed_in? %>
 
 	<ul>
-		<li>Poster une nouvelle offre</li>
+		<li><%= link_to 'poster une offre', job_offers_path, :class => 'navbar-link' %> |</li>
 
 		<li>Vos missions en cours: <%=current_userpro.job_offers.count %></li>
 
 	</ul>
+
+
 
 <% current_userpro.job_offers.each do |job_offer| %> 
 
