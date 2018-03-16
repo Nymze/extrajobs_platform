@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
 
   get '/offre', to: 'job_offers#new', as: :job_offers
-  post '/offre', to: 'job_offers#create', as: :userpro_post
+  post '/offre', to: 'job_offers#index', as: :userpro_post
 
 
 end
